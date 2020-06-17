@@ -1,5 +1,5 @@
 # InFocus M370 TWRP Device Tree
-==============
+
 This branch is for building of TeamWin Recovey Project (TWRP) Recovery.
 
 ---
