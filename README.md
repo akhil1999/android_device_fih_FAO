@@ -1,4 +1,4 @@
-# InFocus M370 TWRP Device Tree
+# InFocus M370/M372 TWRP Device Tree
 
 This branch is for building of TeamWin Recovey Project (TWRP) Recovery.
 This tree compatible with TWRP 3.4.0.0 as of 17/06/2020
@@ -30,7 +30,8 @@ Front Camera | 2.0 MP
 
 ---
 
-#  Now Starts
+#  Steps to Compile
+
  Add Omni Source or Minimal TWRP Source
  
  `repo sync git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0`
