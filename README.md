@@ -10,9 +10,6 @@ InFocus M370 (FAO)
 
 ### Specifications
 
-Device configuration for InFocus M370i.
-=====================================
-
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Quad-core 1.1 GHz ARM® Cortex™ A7
