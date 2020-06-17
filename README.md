@@ -3,7 +3,7 @@
 This branch is for building of TeamWin Recovey Project (TWRP) Recovery.
 
 ---
-![InFocus M680](http://img01.ibnlive.in/ibnlive/uploads/875x584/jpg/2015/12/infocus-m680-featured.jpg "InFocus M680")
+![InFocus M680](https://www.infocusindia.co.in/images/spec-m370-two.jpg)
 
 
 # About Device
