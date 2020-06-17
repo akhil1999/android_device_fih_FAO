@@ -1,0 +1,39 @@
+# MOD for InFocus M370i/M372
+# by akhil1999 TWRP-3.4.0.0
+# MOD for InFocus M370 (FAO_00WW)
+
+/aboot			emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/aboot			
+/boot			emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/boot			flags=display="Boot";backup=1
+/cache			ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/cache			flags=display="Cache";wipeingui
+/hidden/data		ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/cda			flags=display="Hidden-Data"
+/cust_nv		emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/cust_nv
+/recovery		emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/recovery		flags=display="Recovery";backup=1
+/modem 		        vfat    /dev/block/platform/soc.0/7824900.sdhci/by-name/modem			flags=display="EFS";backup=1
+/modem1			vfat 	/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst1		flags=backup=1;subpartitionof=/modem
+/modem2			vfat    /dev/block/platform/soc.0/7824900.sdhci/by-name/modemst2		flags=backup=1;subpartitionof=/modem
+/system			ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/system			flags=display="System";backup=1;flashimg=1
+/system_image		emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/system			
+/data			ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/userdata		flags=display="Data";backup=1
+/hidden			ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/hidden   		flags=display="Hidden"
+/persist		ext4    /dev/block/platform/soc.0/7824900.sdhci/by-name/persist
+/sbl1			emmc 	/dev/block/platform/soc.0/7824900.sdhci/by-name/sb1
+/misc			emmc    /dev/block/platform/soc.0/7824900.sdhci/by-name/misc
+/tz			emmc    /dev/block/platform/soc.0/7824900.sdhci/by-name/tz
+/rpm			emmc    /dev/block/platform/soc.0/7824900.sdhci/by-name/rpm
+/sutinfo		emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/sutinfo
+/systeminfo		emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/systeminfo
+/splash			emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/splash
+/multi_splash 		emmc 	/dev/block/platform/soc.0/7824900.sdhci/by-name/multi_splash
+/ftm			emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/ftm
+/ftm_system		ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/ftm_system
+/sec			emmc  	/dev/block/platform/soc.0/7824900.sdhci/by-name/sec
+/external_sd		auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1				flags=display="External SDcard";storage;wipeingui;removable;backup=0
+
+
+
+
+
+
+
+
+
