@@ -29,7 +29,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit language packages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# fix rebooting into recovery
+# fix rebooting into recovery by JellyCandy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/aboot:root/sbin/aboot \
     $(LOCAL_PATH)/recovery/aboot.sh:root/sbin/aboot.sh
