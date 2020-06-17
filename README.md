@@ -39,7 +39,7 @@ Front Camera | 2.0 MP
 Then Run `repo sync` 
 
 ```sh
-. source ./build/envsetup.sh && lunch omni_FAO-userdebug && make clean && make -j7 recoveryimage
+. source ./build/envsetup.sh && lunch omni_FAO-userdebug && make clean && make -j# recoveryimage
 ```
 `# = No. of CPU threads of your PC'
 
