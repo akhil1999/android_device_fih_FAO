@@ -38,7 +38,7 @@ Front Camera | 2.0 MP
 Then Run `repo sync` 
 
 ```sh
-. build/envsetup.sh && lunch omni_G42-userdebug && mka -j# recoveryimage 
+. build/envsetup.sh && lunch omni_FAO-userdebug && mka -j# recoveryimage 
 ```
 `# = No. of CPU threads of your PC'
 
