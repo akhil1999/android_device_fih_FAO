@@ -1,6 +1,7 @@
 # InFocus M370 TWRP Device Tree
 
 This branch is for building of TeamWin Recovey Project (TWRP) Recovery.
+This tree compatible with TWRP 3.4.0.0 as of 17/06/2020
 
 ---
 ![InFocus M680](https://www.infocusindia.co.in/images/spec-m370-two.jpg)
@@ -42,6 +43,6 @@ Then Run `repo sync`
 `# = No. of CPU threads of your PC'
 
 ### Thanks to:
- * jellycandy
- * TeamWin
  * akhil1999
+ * TeamWin
+ * jellycandy for recovery reboot fixes
