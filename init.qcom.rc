@@ -1,0 +1,79 @@
+#
+# Copyright 2014 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#	  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import init.qcom.usb.rc
+import init.qcom.power.rc
+import init.qcom.diag.rc
+
+on early-init
+	mount debugfs debugfs /sys/kernel/debug
+	mkdir /firmware 0771 system system
+	mkdir /system 0777 root root
+	symlink /data/tombstones /tombstones
+
+on init
+	write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
+	# sets up initial cpusets for ActivityManager
+	mkdir /dev/cpuset
+	mount cpuset none /dev/cpuset
+	mkdir /dev/cpuset/foreground
+	mkdir /dev/cpuset/background
+	# this ensures that the cpusets are present and usable, but the device's
+	# init.rc must actually set the correct cpus
+	write /dev/cpuset/foreground/cpus 0
+	write /dev/cpuset/background/cpus 0
+	write /dev/cpuset/foreground/mems 0
+	write /dev/cpuset/background/mems 0
+	chown system system /dev/cpuset
+	chown system system /dev/cpuset/foreground
+	chown system system /dev/cpuset/background
+	chown system system /dev/cpuset/tasks
+	chown system system /dev/cpuset/foreground/tasks
+	chown system system /dev/cpuset/background/tasks
+	chmod 0664 /dev/cpuset/foreground/tasks
+	chmod 0664 /dev/cpuset/background/tasks
+	chmod 0664 /dev/cpuset/tasks
+
+	# pstore/ramoops previous console log
+	mount pstore pstore /sys/fs/pstore
+	chown system log /sys/fs/pstore/console-ramoops
+	chmod 0440 /sys/fs/pstore/console-ramoops
+	chown system log /sys/fs/pstore/pmsg-ramoops-0
+	chmod 0440 /sys/fs/pstore/pmsg-ramoops-0
+	
+on fs
+	mount_all fstab.qcom
+
+on boot
+	chown system system /sys/class/power_supply/battery/charging_enabled
+	chmod 0664 /sys/class/power_supply/battery/charging_enabled
+	chown root system /sys/class/power_supply/bms/current_now
+	chown root system /sys/class/power_supply/bms/voltage_ocv
+	chmod 0664 /sys/class/power_supply/bms/current_now
+	chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+	start vm_bms
+
+# Allow usb charging to be disabled peristently
+on property:persist.usb.chgdisabled=1
+    write /sys/class/power_supply/battery/charging_enabled 0
+
+on property:persist.usb.chgdisabled=0
+    write /sys/class/power_supply/battery/charging_enabled 1
+
+service vm_bms /system/bin/vm_bms
+    user root
+    group root
+    disabled
