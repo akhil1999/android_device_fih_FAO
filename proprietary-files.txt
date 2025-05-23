@@ -30,6 +30,8 @@ etc/firmware/venus.b03
 etc/firmware/venus.b04
 etc/firmware/venus.mbn
 etc/firmware/venus.mdt
+etc/init.qcom.bt.sh
+etc/hcidump.sh
 lib/egl/egl.cfg
 lib/egl/libGLES_android.so
 lib/hw/copybit.msm8909.so
