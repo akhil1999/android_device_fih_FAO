@@ -32,6 +32,7 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 etc/init.qcom.bt.sh
 etc/hcidump.sh
+etc/sensors/hals.conf
 lib/egl/egl.cfg
 lib/egl/libGLES_android.so
 lib/hw/copybit.msm8909.so
@@ -40,6 +41,8 @@ lib/hw/hwcomposer.msm8909.so
 lib/hw/lights.msm8909.so
 lib/hw/memtrack.msm8909.so
 lib/hw/audio.primary.msm8909.so
+lib/hw/sensors.bosch.so
+lib/hw/sensors.msm8909.so
 lib/libhdmi.so
 lib/liboverlay.so
 lib/libqdMetaData.so
@@ -61,6 +64,9 @@ lib/libOmxEvrcEnc.so
 lib/libOmxAmrEnc.so
 lib/libc2dcolorconvert.so
 lib/libqomx_core.so
+lib/sensors.native.so
+lib/libxml2.so
+vendor/etc/calmodule.cfg
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
